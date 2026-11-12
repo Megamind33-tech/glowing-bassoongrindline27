@@ -1,4 +1,4 @@
-import { LibreCorsaLogo } from "@/components/ui/LibreCorsaLogo";
+import { GrindlineLogo } from "@/components/ui/GrindlineLogo";
 
 /** Route fallback before the simulator mounts: matches the simulator's own loading screen */
 export default function Loading() {
@@ -10,7 +10,7 @@ export default function Loading() {
         style={{ background: "radial-gradient(560px circle at 74% 50%, rgba(204,255,0,0.07), rgba(8,9,13,0) 100%)" }}
       />
       <div className="relative mx-auto flex w-full max-w-[1440px] flex-col gap-[clamp(20px,3.6vh,36px)]">
-        <LibreCorsaLogo variant="full" size="lg" />
+        <GrindlineLogo variant="full" size="lg" />
         <div className="flex flex-wrap items-end gap-x-7 gap-y-4">
           <div className="flex flex-col gap-2">
             <span className="lc-disp text-[clamp(72px,12vw,168px)] tracking-[-0.02em] tabular-nums phone:text-[48px]">

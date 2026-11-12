@@ -4,7 +4,7 @@ import React from "react";
 import { Fuel, Zap } from "lucide-react";
 import type { CarTelemetry, TireCompound } from "@/types/f1";
 import { atShiftPoint, formatDelta, formatLapTime, formatSectorTime, HUD_RED, TYRE_CONDITION_SHOW, tyreHeatColor } from "../hud-format";
-import { LibreCorsaMark } from "../../ui/LibreCorsaLogo";
+import { GrindlineMark } from "../../ui/GrindlineLogo";
 import { anchor, COMPOUND_COLORS, gearLabel, HUD_GLASS, MiniMap, raceNeighbours, sectorColor, type HudDesignProps } from "./hud-style-parts";
 import { PedalBars } from "../PedalBars";
 import { TowerRows } from "../TimingPanels";
@@ -23,7 +23,7 @@ export const BroadcastTower: React.FC<{
   return (
     <section aria-label={race ? "Timing tower" : "Session"} className={`w-full overflow-hidden rounded-[20px] ${HUD_GLASS} ${className}`}>
       <div className="flex h-11 items-center gap-2.5 rounded-[20px_20px_14px_14px] bg-[#F5F7FA] pr-3 pl-2 text-[#08090D]">
-        <LibreCorsaMark className="h-7 w-7 shrink-0" />
+        <GrindlineMark className="h-7 w-7 shrink-0" />
         <div className="lc-disp flex-1 truncate text-[18px]">
           {race ? (
             <>

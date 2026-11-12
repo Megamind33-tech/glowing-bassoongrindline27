@@ -3,13 +3,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ChevronDown, ExternalLink } from "lucide-react";
 import { Segmented } from "./menu-ui";
+import { REPO_URL } from "@/lib/site";
 
 /**
  * Feedback goes to GitHub as a pre-filled issue form (.github/ISSUE_TEMPLATE): bug-report.yml, wheel-report.yml,
  * idea.yml and content-request.yml. The query keys below are those forms' field ids. GitHub only pre-fills text
  * fields from the URL, so every value is sent as plain text.
  */
-const REPO_URL = "https://github.com/KhazP/librecorsa";
 
 const KINDS = ["Bug", "Wheel", "Idea", "Car", "Track"] as const;
 export type FeedbackKind = (typeof KINDS)[number];
@@ -43,7 +43,7 @@ const COPY: Record<FeedbackKind, { title: string; intro: string; send: string }>
   },
   Wheel: {
     title: "Report a wheel",
-    intro: "Tell us how your wheel works in LibreCorsa: steering, pedals, buttons and force feedback. Every report makes more wheels work.",
+    intro: "Tell us how your wheel works in Grindline 27: steering, pedals, buttons and force feedback.",
     send: "Send report",
   },
   Idea: {
@@ -340,7 +340,7 @@ export const RequestPanel: React.FC<{ context?: FeedbackContext }> = ({ context 
         <p className="m-0 text-[17px] leading-snug font-semibold sm:text-[18px]">{copy.intro}</p>
         {content ? (
           <p className="m-0 text-[14px] leading-relaxed text-[#8E96AA]">
-            LibreCorsa can only ship models it is allowed to share: ones under an open or non-commercial license (CC BY, CC BY-SA, CC0,
+            Grindline 27 can only ship models it is allowed to share: ones under an open or non-commercial license (CC BY, CC BY-SA, CC0,
             CC BY-NC, CC BY-NC-SA) or with <span className="text-[#F5F7FA]">written permission from the creator</span>. Mods taken from
             other games can only be used if their original creator agrees.
           </p>

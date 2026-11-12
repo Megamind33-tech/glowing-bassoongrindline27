@@ -6,7 +6,7 @@ import { getTrackInfo } from "@/lib/track-registry";
 import { formatMegabytes, useAssetProgress, type AssetTask } from "@/lib/loading/asset-progress";
 import { connectedPads } from "@/lib/input/device-input";
 import { padPressTracker } from "./useMenuNav";
-import { LibreCorsaLogo } from "@/components/ui/LibreCorsaLogo";
+import { GrindlineLogo } from "@/components/ui/GrindlineLogo";
 
 const TIPS = [
   "Bugesera sits 1,400 m above sea level: thinner air means less downforce and less drag than you expect.",
@@ -222,7 +222,7 @@ export const LoadingScreen: React.FC<{
       <div className="relative mx-auto flex w-full max-w-[1440px] flex-1 flex-col pl-[max(1.25rem,env(safe-area-inset-left))] pr-[max(1.25rem,env(safe-area-inset-right))] pt-[max(clamp(28px,4.4vh,48px),env(safe-area-inset-top))] pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:pl-[max(2.5rem,env(safe-area-inset-left))] sm:pr-[max(2.5rem,env(safe-area-inset-right))] lg:pl-[max(4rem,env(safe-area-inset-left))] lg:pr-[max(4rem,env(safe-area-inset-right))]">
         <div className="grid flex-1 grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-10 short:grid-cols-[minmax(0,1fr)_auto] short:gap-6">
           <div className="order-2 flex max-w-[560px] min-w-0 flex-col gap-[clamp(20px,3.6vh,36px)] lg:order-1 short:order-1">
-            <LibreCorsaLogo variant="full" size="lg" />
+            <GrindlineLogo variant="full" size="lg" />
 
             {/* Percentage and the start lights as the progress indicator */}
             <div className="flex flex-wrap items-end gap-x-7 gap-y-4 short:gap-x-5">

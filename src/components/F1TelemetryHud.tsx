@@ -31,7 +31,7 @@ import { useLapDeltaTracker } from "./hud/useLapDelta";
 import { HUD_CYAN, HUD_GLASS, HUD_LBL, HUD_RED, HUD_VOLT, aidsActive, raceState } from "./hud/hud-format";
 import { HudModeContext, type HudMode } from "./hud/hud-mode";
 import { aeroReadout } from "./hud/aero-label";
-import { LibreCorsaLogo } from "./ui/LibreCorsaLogo";
+import { GrindlineLogo } from "./ui/GrindlineLogo";
 import { InputTrace } from "./hud/InputTrace";
 import { PedalBars, pedalLayers } from "./hud/PedalBars";
 import { ProximityRadar } from "./hud/ProximityRadar";
@@ -483,7 +483,7 @@ export const F1TelemetryHud: React.FC<F1TelemetryHudProps> = (props) => {
         <div
           className={`${showKeyHints ? (style ? "2xl:flex" : "sm:flex") : ""} hidden flex-wrap items-center gap-x-3 gap-y-2 rounded-full py-2 pr-3.5 pl-2 text-[12px] font-bold text-[#F5F7FA] ${HUD_GLASS}`}
         >
-          <LibreCorsaLogo variant="mark" className="h-[22px] w-[22px]" />
+          <GrindlineLogo variant="mark" className="h-[22px] w-[22px]" />
           {inputMode === "pad" ? (
             <span className="inline-flex items-center gap-1.5">
               <PadGlyph button="menu" family={padFamily} />

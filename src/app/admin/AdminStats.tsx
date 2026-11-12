@@ -6,7 +6,7 @@
  */
 import { type FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { LibreCorsaLogo } from "@/components/ui/LibreCorsaLogo";
+import { GrindlineLogo } from "@/components/ui/GrindlineLogo";
 import { onlineUrl } from "@/lib/net/online-config";
 import type { AdminStats as StatsBody, UsageGroup } from "../../../cloudflare/api/admin";
 
@@ -184,7 +184,7 @@ export function AdminStats() {
       <div className="mx-auto flex w-full max-w-[1040px] flex-col gap-8 px-4 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(3rem,env(safe-area-inset-bottom))] sm:px-8">
         <header className="flex flex-wrap items-center justify-between gap-4">
           <Link href="/" aria-label="LibreCorsa home" className="no-underline">
-            <LibreCorsaLogo variant="compact" size="sm" />
+            <GrindlineLogo variant="compact" size="sm" />
           </Link>
           {key ? (
             <button type="button" onClick={forget} className="lc-lbl rounded-full border border-[#262B3D] px-4 py-2 text-[#8E96AA] transition-colors hover:border-[#3A4157] hover:text-[#F5F7FA]">

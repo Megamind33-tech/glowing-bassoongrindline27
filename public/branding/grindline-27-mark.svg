@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Grindline 27</title>
+  <path fill="#08090d" d="M78 18h356l60 60v356l-60 60H78l-60-60V78z"/>
+  <path fill="#161a20" d="M91 42h332l47 47v284L336 467H91l-48-48V89z"/>
+  <path fill="#ccff00" d="M77 379h117v34H77z"/>
+  <path fill="#ff2a3c" d="M318 379h117v34H318z"/>
+  <text x="256" y="336" text-anchor="middle" fill="#f5f7fa" font-family="Arial,sans-serif" font-size="280" font-weight="900" font-style="italic" letter-spacing="-22">2<tspan fill="#ccff00">7</tspan></text>
+  <path fill="#00e5ff" d="M43 89h22v282H43z" opacity=".8"/>
+</svg>

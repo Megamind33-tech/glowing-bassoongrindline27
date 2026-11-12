@@ -1,0 +1,23 @@
+{
+  "appId": "com.grindline27.racing",
+  "appName": "Grindline 27",
+  "webDir": "out",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 900,
+      "launchAutoHide": true,
+      "backgroundColor": "#08090D",
+      "showSpinner": false,
+      "splashFullScreen": true,
+      "splashImmersive": true
+    },
+    "StatusBar": {
+      "style": "LIGHT",
+      "backgroundColor": "#08090D",
+      "overlaysWebView": true
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { NativeAppBootstrap } from "@/components/platform/NativeAppBootstrap";
 import { withBasePath } from "@/lib/base-path";
 import { FORWARD_TO_GAME } from "@/lib/home/forward-to-game";
 import { REPO_URL, SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/site";
@@ -53,17 +54,17 @@ export const metadata: Metadata = {
   keywords: [
     "sim racing",
     "racing simulator",
-    "browser racing game",
-    "free racing game",
-    "open source racing game",
+    "Android racing game",
+    "motorsport league",
+    "Grindline 27",
     "motorsport simulator",
     "formula car",
     "GT3",
     "force feedback",
-    "WebGL",
+    "Android",
   ],
-  authors: [{ name: "KhazP", url: "https://github.com/KhazP" }],
-  creator: "KhazP",
+  authors: [{ name: SITE_NAME, url: REPO_URL }],
+  creator: SITE_NAME,
   category: "games",
   alternates: { canonical: "/" },
   robots: {
@@ -83,10 +84,9 @@ export const metadata: Metadata = {
   // Metadata URLs don't get a base path on their own
   icons: {
     icon: [
-      { url: withBasePath("/branding/librecorsa-mark.svg"), type: "image/svg+xml" },
-      { url: withBasePath("/favicon.ico"), sizes: "16x16 32x32 48x48" },
+      { url: withBasePath("/branding/grindline-27-mark.svg"), type: "image/svg+xml" },
     ],
-    apple: [{ url: withBasePath("/branding/apple-touch-icon.png"), sizes: "180x180" }],
+    apple: [{ url: withBasePath("/branding/grindline-27-icon-180.png"), sizes: "180x180" }],
   },
 };
 
@@ -101,22 +101,21 @@ export const viewport: Viewport = {
 // schema.org description of the game for search results
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": ["VideoGame", "WebApplication"],
+  "@type": "VideoGame",
   name: SITE_NAME,
   url: `${SITE_URL}/`,
   description: SITE_DESCRIPTION,
   image: `${SITE_URL}/opengraph-image.jpg`,
   applicationCategory: "GameApplication",
   genre: ["Racing", "Simulation", "Sim racing"],
-  gamePlatform: "Web browser",
-  operatingSystem: "Any (runs in a WebGL2 browser)",
+  gamePlatform: "Android",
+  operatingSystem: "Android",
   playMode: ["SinglePlayer", "MultiPlayer"],
   isAccessibleForFree: true,
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-  license: "https://opensource.org/licenses/MIT",
   codeRepository: REPO_URL,
   sameAs: [REPO_URL],
-  author: { "@type": "Person", name: "KhazP", url: "https://github.com/KhazP" },
+  author: { "@type": "Organization", name: SITE_NAME, url: REPO_URL },
 };
 
 export default function RootLayout({
@@ -130,6 +129,7 @@ export default function RootLayout({
       className={`dark ${geist.variable} ${geistMono.variable} ${chakraPetch.variable} ${orbitron.variable}`}
     >
       <body className="antialiased bg-[#08090D] text-[#F5F7FA] selection:bg-[#CCFF00] selection:text-[#08090D]">
+        <NativeAppBootstrap />
         {/* Old links to "/" go on to the game at /play before the home page is drawn (forward-to-game.ts) */}
         <script dangerouslySetInnerHTML={{ __html: FORWARD_TO_GAME }} />
         <script

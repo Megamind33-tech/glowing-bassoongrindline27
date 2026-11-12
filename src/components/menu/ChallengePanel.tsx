@@ -104,7 +104,7 @@ export const ChallengePanel: React.FC<ChallengePanelProps> = ({
           </button>
         ) : (
           <p className="m-0 rounded-[14px] border border-[#FFB300]/40 bg-[#FFB300]/[0.08] px-3.5 py-2.5 text-[13px] font-semibold text-[#FFB300]">
-            This copy of the game doesn&apos;t have this week&apos;s circuit or car. Play it on librecorsa.org.
+            Grindline weekly events are not available yet. Try local practice or race the AI.
           </p>
         )}
       </section>

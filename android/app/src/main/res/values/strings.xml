@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Grindline 27</string>
+    <string name="title_activity_main">Grindline 27</string>
+    <string name="package_name">com.grindline27.racing</string>
+    <string name="custom_url_scheme">com.grindline27.racing</string>
+</resources>

@@ -30,16 +30,15 @@ import { ConditionsPanel, type ConditionsPanelProps } from "./ConditionsPanel";
 import { RaceSetupPanel } from "./RaceSetupPanel";
 import { DEFAULT_RACE_SETUP, RACE_START_LABELS } from "@/lib/sim/race-setup";
 import { TIME_OF_DAY_LABELS, WEATHER_LABELS } from "@/lib/sim/weather";
-import { LibreCorsaLogo } from "@/components/ui/LibreCorsaLogo";
+import { GrindlineLogo } from "@/components/ui/GrindlineLogo";
 import { AI_SKILL_DEFAULT, aiSkillLabel } from "@/lib/sim/ai-tuning";
-import { REPO_URL, SUPPORT_URL } from "@/lib/site";
+import { REPO_URL } from "@/lib/site";
 import { withBasePath } from "@/lib/base-path";
 import { EmbeddedBadge } from "./EmbeddedBadge";
 import {
   CarFront,
   CloudSun,
   CodeXml,
-  Coffee,
   ExternalLink,
   Flag,
   Gamepad2,
@@ -106,7 +105,7 @@ const HUD_LABELS: Record<HudPreset, string> = {
 
 const km = (t: TrackInfo) => (t.lengthM / 1000).toFixed(2);
 
-const TAKEDOWN_URL = "https://github.com/KhazP/librecorsa/issues/new?template=takedown-request.yml";
+const TAKEDOWN_URL = `${REPO_URL}/issues`;
 
 const CreditRow: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
   <div className="flex flex-col gap-2 border-t border-[#262B3D] py-4">
@@ -118,12 +117,14 @@ const CreditRow: React.FC<{ title: string; children: React.ReactNode }> = ({ tit
 const Credits: React.FC = () => (
   <div className="flex flex-col gap-[18px]">
     <p className="m-0 max-w-[760px] text-[18px] leading-snug font-semibold text-[#F5F7FA] sm:text-[22px]">
-      <span className="text-[#CCFF00]">LibreCorsa</span> is an open-source, multi-class browser racing simulator built for
-      everyone — featuring Formula prototypes, GT3 machinery, and an open circuit pipeline.
+      <span className="text-[#CCFF00]">Grindline 27</span> is an Android racing game built on the open-source LibreCorsa simulator. This project keeps its 500 Hz vehicle physics and develops them into a touch-first racing league.
     </p>
 
     <div className="grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] gap-x-8">
       <div>
+        <CreditRow title="Upstream simulator">
+          Grindline 27 is based on <a href="https://github.com/KhazP/librecorsa" target="_blank" rel="noreferrer" className={linkClass}>LibreCorsa by KhazP</a>. Its source code is MIT licensed; art, sound and circuit assets keep separate licenses.
+        </CreditRow>
         <CreditRow title="Physics & dynamics">
           500 Hz 6-DOF rigid-body solver, Pacejka Magic Formula &amp; normalized-slip tyre models with 9-node thermal
           dynamics, active aerodynamics, and hybrid ERS.
@@ -268,8 +269,7 @@ const Credits: React.FC = () => (
       <div className="flex max-w-[600px] min-w-0 flex-col gap-1">
         <span className="lc-title text-[16px] text-[#F5F7FA]">Rights holders &amp; takedown</span>
         <p className="m-0 text-[13px] leading-relaxed text-[#C5CBD8]">
-          If you made a model, texture, sound or other asset used here and it is uncredited, credited wrongly, under the
-          wrong license, or not meant to be in LibreCorsa, let us know — it will be fixed or removed, usually within 7 days.
+          Grindline 27 is based on LibreCorsa. Vehicle, circuit, audio and scenery assets keep their original licenses and attribution; check the project credits before reuse.
         </p>
       </div>
       <a
@@ -286,8 +286,7 @@ const Credits: React.FC = () => (
 
     <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#262B3D] pt-3.5">
       <p className="m-0 max-w-[620px] text-[13px] leading-relaxed text-[#8E96AA]">
-        Built with Next.js, React, Three.js and Tailwind CSS. Source code licensed under MIT; 3D and audio assets are for
-        non-commercial educational use only.
+        Android app powered by Capacitor, Next.js, React and Three.js. Code is MIT licensed; included driving assets have separate licenses, including non-commercial assets.
       </p>
       <span className="flex gap-[3px]" aria-hidden>
         <span className="h-[5px] w-[18px] rounded-full bg-[#CCFF00]" />
@@ -479,7 +478,7 @@ const EntryShell: React.FC<{ item: MenuItem; expanded?: boolean; className: stri
     </button>
   );
 
-/** Lap times / Credits / Request / Coffee / GitHub: the quiet text links under the grid */
+/** Lap times / Credits / Request / Project / GitHub: the quiet text links under the grid */
 const LinkEntry: React.FC<{ item: MenuItem }> = ({ item }) => {
   const Icon = item.icon;
   return (
@@ -736,9 +735,8 @@ export const TitleMenu: React.FC<TitleMenuProps> = (props) => {
       panel: "request",
       run: () => openPanel("request"),
     },
-    { id: "press", label: "Press", detail: "Coverage and press kit", icon: Newspaper, href: withBasePath("/press") },
+    { id: "project", label: "Project status", detail: "Current build and next features", icon: Newspaper, href: withBasePath("/press") },
     { id: "privacy", label: "Privacy", detail: "What the game keeps and sends", icon: ShieldCheck, href: withBasePath("/privacy") },
-    { id: "support", label: "Buy me a coffee", detail: "Support development", icon: Coffee, href: SUPPORT_URL },
     { id: "github", label: "GitHub", detail: "Source code", icon: CodeXml, href: REPO_URL },
   ];
   const panelItems = items.filter((i) => i.panel);
@@ -815,7 +813,7 @@ export const TitleMenu: React.FC<TitleMenuProps> = (props) => {
           {panel ? (
             <>
               <div className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-2">
-                <LibreCorsaLogo variant="compact" size="sm" />
+                <GrindlineLogo variant="compact" size="sm" />
                 <EmbeddedBadge />
               </div>
               <DevicePill pad={pad} slim />
@@ -823,7 +821,7 @@ export const TitleMenu: React.FC<TitleMenuProps> = (props) => {
           ) : (
             <>
               <div className="flex min-w-0 flex-wrap items-center gap-x-[22px] gap-y-3">
-                <LibreCorsaLogo variant="compact" size="md" />
+                <GrindlineLogo variant="compact" size="md" />
                 <EmbeddedBadge />
               </div>
               <div className="flex min-w-0 flex-wrap items-center gap-2.5">

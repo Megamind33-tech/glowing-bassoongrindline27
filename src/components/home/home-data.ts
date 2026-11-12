@@ -51,39 +51,22 @@ export interface HomeCar {
   thumb: string | null;
 }
 
-export interface HomeCoverage {
-  outlet: string;
-  title: string;
-  url: string;
-  /** YYYY-MM-DD */
-  date: string;
-}
-
 export interface HomeData {
   defaultTrackId: string;
   defaultCarId: string;
   venues: HomeVenue[];
   cars: HomeCar[];
-  coverage: HomeCoverage[];
   repoUrl: string;
-  supportUrl: string;
 }
 
 export const km = (l: Pick<HomeLayout, "lengthM">): string => (l.lengthM / 1000).toFixed(2);
 
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-/** 2026-11-09 → 9 Nov 2026 */
-export const day = (iso: string): string => {
-  const [y, m, d] = iso.split("-").map(Number);
-  return `${d} ${MONTHS[m - 1]} ${y}`;
-};
-
-/** What is in the game, in the press page's words */
+/** What is in this Grindline build today */
 export const GAME_FACTS: readonly [label: string, text: string][] = [
   ["Physics", "Simulated 500 times a second, with tyre temperatures, active aero and hybrid power"],
-  ["Racing", "Hot laps, races against AI, multiplayer rooms and online lap times"],
-  ["Controls", "Keyboard, gamepad, touch or a force-feedback wheel"],
-  ["Plays on", "Any modern browser: computer, phone or tablet"],
+  ["Racing", "Practice sessions and offline races against AI"],
+  ["Controls", "Touch steering and pedals, tilt steering, or a gamepad"],
+  ["Platform", "Installed, fullscreen Android game"],
   ["Conditions", "Your choice of weather and time of day"],
-  ["Price", "Free. No account and no ads; tips are optional and unlock nothing"],
+  ["Progress", "Local settings and lap history; career and teams are in development"],
 ];

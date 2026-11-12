@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Check, ChevronRight, Play } from "lucide-react";
+import { Check, ChevronRight, Play } from "lucide-react";
 import { currentInputMode, useInputMode } from "@/components/menu/input-mode";
 import { PadGlyph } from "@/components/menu/pad-glyph";
 import { focusables, useFocusNav } from "@/components/menu/useFocusNav";
-import { LibreCorsaLogo } from "@/components/ui/LibreCorsaLogo";
+import { GrindlineLogo } from "@/components/ui/GrindlineLogo";
 import { withBasePath } from "@/lib/base-path";
 import { SITE_DESCRIPTION } from "@/lib/site";
-import { day, GAME_FACTS, GRADE_NOTES, km, type HomeData } from "./home-data";
+import { GAME_FACTS, GRADE_NOTES, km, type HomeData } from "./home-data";
 import { CarThumb, GradeBadge, GradeLegend, KeyCap, OutlineThumb, PadPrompt, Prompt } from "./home-ui";
 import { LapMap } from "./LapMap";
 import { PLAY_HREF, rememberPicks, storedPicks } from "./play";
@@ -127,11 +127,11 @@ export const HomeHub: React.FC<{ data: HomeData }> = ({ data }) => {
   return (
     <main ref={mainRef} className="flex h-dvh flex-col bg-[#08090D] text-[#F5F7FA]">
       {/* Read by screen readers and search engines */}
-      <h1 className="sr-only">LibreCorsa: free open-source racing simulator in your browser</h1>
+      <h1 className="sr-only">Grindline 27: Android racing league</h1>
       <p className="sr-only">{SITE_DESCRIPTION}</p>
 
       <header className={`flex shrink-0 flex-wrap items-center gap-x-3 gap-y-3 sm:gap-x-6 pt-[max(1rem,env(safe-area-inset-top))] pb-4 ${GUTTER}`}>
-        <LibreCorsaLogo variant="compact" size="sm" />
+        <GrindlineLogo variant="compact" size="sm" />
         <div className="flex items-center gap-2 max-md:order-last max-md:w-full">
           <span className={`inline-flex ${pad ? "" : "pointer-coarse:hidden"}`}>{pad ? <PadGlyph button="lb" family={family} /> : <KeyCap>Q</KeyCap>}</span>
           <div role="tablist" aria-label="Sections" className="flex gap-1 rounded-full border border-[#262B3D] bg-[#08090D] p-1 max-md:flex-1">
@@ -241,16 +241,12 @@ export const HomeHub: React.FC<{ data: HomeData }> = ({ data }) => {
             </button>
 
             <a href={withBasePath("/press")} className={`${TILE} flex min-h-[230px] flex-col gap-3 p-5 lg:col-span-2`}>
-              <span className="lc-disp text-[22px]">In the press</span>
-              <span className="flex flex-col gap-1.5 text-[13px] leading-snug text-[#C5CBD8]">
-                {data.coverage.slice(0, 4).map((a) => (
-                  <span key={a.url} className="truncate">
-                    {a.outlet}
-                  </span>
-                ))}
+              <span className="lc-disp text-[22px]">Grindline</span>
+              <span className="text-[13px] leading-snug text-[#C5CBD8]">
+                A new Android racing league. Career, teams and seasons are in development.
               </span>
               <span className={`${MORE} mt-auto`}>
-                Read it
+                Project status
                 <ChevronRight aria-hidden className="h-4 w-4" strokeWidth={2.4} />
               </span>
             </a>
@@ -352,7 +348,8 @@ export const HomeHub: React.FC<{ data: HomeData }> = ({ data }) => {
           <div className="grid gap-x-14 gap-y-10 pt-2 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)]">
             <div className="flex min-w-0 flex-col gap-7">
               <p className="m-0 max-w-[560px] text-[19px] leading-relaxed text-[#F5F7FA]">
-                LibreCorsa is a free, open-source racing simulator that runs in your browser. I make it on my own.
+                Grindline 27 is an Android racing game built on LibreCorsa&apos;s open-source racing simulation. This build
+                brings its high-frequency vehicle physics into a fullscreen, touch-first app.
               </p>
               <dl className="m-0 flex flex-col">
                 {GAME_FACTS.map(([label, text]) => (
@@ -364,27 +361,16 @@ export const HomeHub: React.FC<{ data: HomeData }> = ({ data }) => {
               </dl>
             </div>
             <div className="flex min-w-0 flex-col gap-6">
-              <h2 className="lc-disp m-0 text-[28px]">In the press</h2>
-              <ul className="m-0 flex list-none flex-col p-0">
-                {data.coverage.map((a) => (
-                  <li key={a.url} className="border-t border-[#262B3D] last:border-b">
-                    <a href={a.url} target="_blank" rel="noopener" className="group flex items-start justify-between gap-4 py-3.5 text-[#F5F7FA] no-underline">
-                      <span className="flex min-w-0 flex-col gap-1">
-                        <span className="lc-title text-[15px]">{a.outlet}</span>
-                        <span className="text-[14px] leading-snug text-[#C5CBD8] group-hover:text-[#F5F7FA]">{a.title}</span>
-                        <span className="lc-data text-[12px] font-semibold text-[#8E96AA]">{day(a.date)}</span>
-                      </span>
-                      <ArrowUpRight aria-hidden className="mt-0.5 h-4 w-4 shrink-0 text-[#8E96AA] group-hover:text-[#F5F7FA]" strokeWidth={2.2} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <h2 className="lc-disp m-0 text-[28px]">Development</h2>
+              <p className="m-0 max-w-[420px] text-[15px] leading-relaxed text-[#C5CBD8]">
+                The Android foundation and first offline race are taking shape. League progression, original cars and more
+                circuits are next.
+              </p>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-[14px] font-semibold">
                 {[
-                  ["All coverage and the press kit", withBasePath("/press")],
+                  ["Project details", withBasePath("/press")],
                   ["Privacy", withBasePath("/privacy")],
                   ["GitHub", data.repoUrl],
-                  ["Buy me a coffee", data.supportUrl],
                 ].map(([label, href]) => (
                   <a key={label} href={href} className="text-[#C5CBD8] underline decoration-[#3A4157] underline-offset-4 hover:text-[#F5F7FA] hover:decoration-[#F5F7FA]">
                     {label}

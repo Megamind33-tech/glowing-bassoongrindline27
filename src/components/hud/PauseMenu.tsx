@@ -56,7 +56,7 @@ import {
   Wrench,
   type LucideIcon,
 } from "lucide-react";
-import { LibreCorsaLogo } from "@/components/ui/LibreCorsaLogo";
+import { GrindlineLogo } from "@/components/ui/GrindlineLogo";
 import { AI_SKILL_DEFAULT, AI_SKILL_LEVELS, aiSkillLabel } from "@/lib/sim/ai-tuning";
 import { CAMERA_MODES } from "@/lib/render/camera-modes";
 import { TYRE_SETUP_LIMITS } from "@/lib/sim/tyre-setup";
@@ -502,7 +502,7 @@ export const PauseMenu: React.FC<PauseMenuProps> = (props) => {
               {mpRace ? <span className={`${HEADER_CHIP} bg-[#00E5FF] text-[#08090D]`}>Online race</span> : null}
             </div>
           </div>
-          <LibreCorsaLogo variant="compact" />
+          <GrindlineLogo variant="compact" />
         </div>
 
         <div className="mt-5 grid flex-1 grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(240px,270px)_minmax(0,1fr)] short:mt-3 short:gap-4">

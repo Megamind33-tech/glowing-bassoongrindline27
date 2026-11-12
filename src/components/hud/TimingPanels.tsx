@@ -18,7 +18,7 @@ import {
   sectorTimeColor,
   COMPOUND_COLORS,
 } from "./hud-format";
-import { LibreCorsaMark } from "../ui/LibreCorsaLogo";
+import { GrindlineMark } from "../ui/GrindlineLogo";
 import { challengePlaceLabel, type ChallengeTarget } from "@/lib/net/challenge-target";
 
 /** Black / white chequer tile for finished-car markers */
@@ -116,7 +116,7 @@ export const TimingTower: React.FC<{ race: RaceStatus; trackCode?: string; gaps?
   <section aria-label="Timing tower" className={`w-[264px] overflow-hidden rounded-[20px] ${HUD_GLASS}`}>
     {/* Pitboard header: mark, lap of laps, position and track code */}
     <div className="flex h-11 items-center gap-2.5 rounded-t-[20px] rounded-b-[14px] bg-[#F5F7FA] pr-3 pl-2 text-[#08090D]">
-      <LibreCorsaMark className="h-7 w-7 shrink-0" />
+      <GrindlineMark className="h-7 w-7 shrink-0" />
       <span className="lc-disp flex-1 text-[18px] leading-none">
         Lap {race.lap}
         {race.totalLaps ? <span className="opacity-40">/{race.totalLaps}</span> : null}

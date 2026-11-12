@@ -312,7 +312,7 @@ export const MultiplayerPanel: React.FC<MultiplayerPanelProps> = ({
     const url = getInviteUrl();
     if (!url || typeof navigator === "undefined" || typeof navigator.share !== "function") return;
     try {
-      await navigator.share({ title: "LibreCorsa race", text: "Join my race", url });
+      await navigator.share({ title: "Grindline 27 race", text: "Join my race", url });
     } catch {
       // Share sheet dismissed or unavailable
     }

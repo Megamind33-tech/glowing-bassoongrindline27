@@ -14,7 +14,7 @@ export default function PlayPage() {
   return (
     <main className="h-screen w-screen overflow-hidden bg-[#07070c]">
       {/* Read by screen readers and search engines; the game itself draws to a canvas */}
-      <h1 className="sr-only">Play LibreCorsa: free open-source racing simulator in your browser</h1>
+      <h1 className="sr-only">Grindline 27 racing league</h1>
       <p className="sr-only">{SITE_DESCRIPTION}</p>
       <TrackGate />
     </main>

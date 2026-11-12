@@ -14,7 +14,7 @@ import { AssistsStep } from "./steps/AssistsStep";
 import { CarStep } from "./steps/CarStep";
 import type { SetupStepProps } from "./steps/types";
 import type { InputDevice } from "@/lib/input/device-input";
-import { LibreCorsaLogo } from "@/components/ui/LibreCorsaLogo";
+import { GrindlineLogo } from "@/components/ui/GrindlineLogo";
 
 export type WizardStepId = "device" | "setup" | "assists" | "car";
 export type WizardMode = "first-run" | "controls";
@@ -153,7 +153,7 @@ export const FirstRunWizard: React.FC<FirstRunWizardProps> = (props) => {
         <div className="flex min-h-0 flex-1 gap-[clamp(24px,3.4vw,48px)]">
           {/* Step rail (roomy screens): where you are in the setup */}
           <aside className="hidden w-[230px] shrink-0 flex-col gap-9 not-compact:flex">
-            <LibreCorsaLogo variant="compact" size="sm" />
+            <GrindlineLogo variant="compact" size="sm" />
             <nav aria-label="Setup steps" className="flex flex-col">
               <span className="lc-lbl mb-3.5">{mode === "first-run" ? "First-time setup" : "Controls"}</span>
               {steps.map((s, i) => {
@@ -206,7 +206,7 @@ export const FirstRunWizard: React.FC<FirstRunWizardProps> = (props) => {
                 />
               ) : (
                 <span className="not-compact:hidden">
-                  <LibreCorsaLogo variant="compact" className="hidden sm:inline-flex" />
+                  <GrindlineLogo variant="compact" className="hidden sm:inline-flex" />
                 </span>
               )}
             </div>

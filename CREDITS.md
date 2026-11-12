@@ -1,6 +1,8 @@
-# LibreCorsa: credits & licensing
+# Grindline 27: upstream credits & licensing
 
-LibreCorsa is an independent, non-commercial, open-source web simulator built with Next.js, React, Three.js, and the Web Audio API.
+Grindline 27 is an independent Android game based on the open-source LibreCorsa racing simulator by [KhazP](https://github.com/KhazP/librecorsa).
+The inherited source and the assets already present in this checkout retain their original attribution and licenses. Grindline
+27 is not affiliated with LibreCorsa. Code and assets have separate licenses; a code license does not grant rights to the art.
 
 ---
 
@@ -185,5 +187,5 @@ Made for this project and licensed under [Creative Commons Attribution-NonCommer
 
 If you made a model, texture, sound or other asset used here and it is uncredited, credited wrongly, under the
 wrong license, or simply not meant to be in LibreCorsa, open a
-[rights / takedown request](https://github.com/KhazP/librecorsa/issues/new?template=takedown-request.yml).
+[rights / takedown request](https://github.com/Megamind33-tech/glowing-bassoongrindline27/issues/new?template=takedown-request.yml).
 It will be fixed or removed from the live site, usually within 7 days.

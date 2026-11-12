@@ -7,8 +7,7 @@ import { CAR_CLASSES, CARS, carThumbUrl, type CarId } from "@/lib/cars/car-regis
 import { REPO_CAR_IDS } from "@/lib/hosted-content";
 import outlines from "@/lib/home/circuit-outlines.json";
 import type { LapOutline } from "@/lib/home/lap-outline";
-import { coverage } from "@/lib/press";
-import { REPO_URL, SUPPORT_URL } from "@/lib/site";
+import { REPO_URL } from "@/lib/site";
 import { CIRCUIT_VENUES, DEFAULT_TRACK_ID } from "@/lib/track-registry";
 
 /** Written by scripts/build-home-outlines.ts, so its shape is LapOutline's (JSON reads a tuple as an array) */
@@ -24,7 +23,7 @@ function thumbOf(id: CarId): string | null {
   return withBasePath(url);
 }
 
-/** The home page: the game's circuits, cars and press, with Drive into the game at /play */
+/** The Grindline home hub: current cars and circuits, with Drive into the game at /play */
 export default function HomePage() {
   const missing = CIRCUIT_VENUES.flatMap((v) => v.layouts.filter((t) => !OUTLINES[t.id]).map((t) => t.id));
   if (missing.length) console.warn(`Home page: no outline for ${missing.join(", ")} (npm run home-outlines)`);
@@ -52,11 +51,7 @@ export default function HomePage() {
       grade: c.quality === "own" ? "sim" : "model",
       thumb: thumbOf(c.id),
     })),
-    coverage: coverage()
-      .slice(0, 4)
-      .map((a) => ({ outlet: a.outlet, title: a.title, url: a.url, date: a.date })),
     repoUrl: REPO_URL,
-    supportUrl: SUPPORT_URL,
   };
 
   // Old links to "/" that belong to the game go on to /play from the root layout (forward-to-game.ts)

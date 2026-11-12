@@ -2,7 +2,7 @@
 
 import React from "react";
 import { RotateCcw } from "lucide-react";
-import { LibreCorsaLogo } from "@/components/ui/LibreCorsaLogo";
+import { GrindlineLogo } from "@/components/ui/GrindlineLogo";
 import { PrimaryButton } from "@/components/menu/menu-ui";
 
 export default function ErrorBoundary({
@@ -56,7 +56,7 @@ export default function ErrorBoundary({
       />
 
       <main className="relative z-[1] flex h-full max-w-[860px] flex-col justify-center gap-7 overflow-y-auto pl-[max(1.25rem,env(safe-area-inset-left))] pr-[max(1.25rem,env(safe-area-inset-right))] pt-[max(3rem,env(safe-area-inset-top))] pb-[max(3rem,env(safe-area-inset-bottom))] sm:pl-[max(6vw,env(safe-area-inset-left))] sm:pr-[max(6vw,env(safe-area-inset-right))] lg:pl-[max(6rem,env(safe-area-inset-left))] lg:pr-[max(6rem,env(safe-area-inset-right))] short:gap-4 short:pt-[max(1.5rem,env(safe-area-inset-top))] short:pb-[max(1.5rem,env(safe-area-inset-bottom))]">
-        <LibreCorsaLogo variant="compact" size="md" />
+        <GrindlineLogo variant="compact" size="md" />
 
         <div className="flex flex-col gap-4">
           <h1 className="lc-disp m-0 text-[clamp(56px,8vw,112px)] short:text-[48px]">

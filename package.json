@@ -1,12 +1,16 @@
 {
-  "name": "librecorsa",
+  "name": "grindline-27",
   "version": "0.2.0",
-  "description": "Open-source, browser-based motorsport simulator with 500 Hz vehicle dynamics.",
+  "description": "Grindline 27 Android racing league built on LibreCorsa's 500 Hz vehicle simulation.",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "android:sync": "node scripts/android-sync.mjs",
+    "android:open": "cap open android",
+    "android:run": "cap run android",
+    "branding:icons": "node scripts/build-branding.mjs",
     "typecheck": "tsc --noEmit",
     "verify": "node scripts/run-verify.mjs",
     "verify:laps": "node scripts/run-verify.mjs driver-laps",
@@ -20,6 +24,11 @@
     "home-outlines": "node --import tsx scripts/build-home-outlines.ts"
   },
   "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.6.0",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4",
     "@takram/three-atmosphere": "^0.19.1",
     "@takram/three-clouds": "^0.7.6",
     "@takram/three-geospatial": "^0.9.1",
@@ -31,6 +40,7 @@
     "three": "0.187.0"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.6.0",
     "@gltf-transform/core": "^4.5.1",
     "@gltf-transform/extensions": "^4.5.1",
     "@gltf-transform/functions": "^4.5.1",
